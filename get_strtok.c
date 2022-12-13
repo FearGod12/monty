@@ -8,7 +8,7 @@
  */
 char *get_strtok(char *line, unsigned int line_number)
 {
-	char delim[2] = "\n ";
+	char delim[2] = " ";
 	char *token = NULL;
 	char *arg = NULL;
 
