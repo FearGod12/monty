@@ -1,7 +1,13 @@
 #include "monty.h"
 
 /**
+ * main - monty scripting language interpreter
  *
+ * @argc: arguements count
+ * @argv: arguements list
+ *
+ * Return: EXIT_SUCCESS on success
+ * or EXIT_FAILURE if otherwise
  */
 int main(int argc, char **argv)
 {
@@ -24,7 +30,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while((bytes_read = getline(&line, &len, fd)) != -1)
+	while ((bytes_read = getline(&line, &len, fd)) != -1)
 	{
 		line_number++;
 		token = get_strtok(line, line_number);
