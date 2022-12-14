@@ -14,8 +14,13 @@ char *get_strtok(char *line, unsigned int line_number)
 
 	line = strtok(line, "\n");
 	token = strtok(line, delim);
-	if (!token)
+
+	if (!token) /*empty lines*/
 		return (NULL);
+
+	if (token[0] == '#') /*comments*/
+		return (NULL);
+
 	arg = strtok(NULL, delim);
 	if (arg)
 	{

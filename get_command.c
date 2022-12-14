@@ -14,6 +14,14 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 		{"pint", pint_func},
 		{"pop", pop_func},
 		{"swap", swap_func},
+		{"add", add_func},
+		{"nop", nop_func},
+		{"sub", sub_func},
+		{"div", div_func},
+		{"mul", mul_func},
+		{"mod", mod_func},
+		{"pchar", pchar_func},
+		{"pstr", pstr_func},
 		{NULL, NULL}
 	};
 	int index = 0;
