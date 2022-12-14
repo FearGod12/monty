@@ -8,10 +8,11 @@
  */
 char *get_strtok(char *line, unsigned int line_number)
 {
-	char delim[2] = " ";
+	char *delim = " ";
 	char *token = NULL;
 	char *arg = NULL;
 
+	line = strtok(line, "\n");
 	token = strtok(line, delim);
 	if (!token)
 		return (NULL);
@@ -19,7 +20,9 @@ char *get_strtok(char *line, unsigned int line_number)
 	if (arg)
 	{
 		if (check_if_integer(arg))
+		{
 			global_var = atoi(arg);
+		}
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
@@ -28,7 +31,7 @@ char *get_strtok(char *line, unsigned int line_number)
 	}
 	else if (arg == NULL && (strcmp(token, "push") == 0))
 	{
-		fprintf(stderr, "L%d: unknown instruction %s", line_number, token);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
 	}
 	return (token);
