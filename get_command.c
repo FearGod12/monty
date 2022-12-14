@@ -2,7 +2,7 @@
 
 /**
  * get_command - matches a token to a command
- * @token - token to be matched
+ * @token: token to be matched
  * @head: pointer to the top of the stack
  * @line_number: lune number
  */
@@ -11,6 +11,9 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 	instruction_t cmd[] = {
 		{"push", push_func},
 		{"pall", pall_func},
+		{"pint", pint_func},
+		{"pop", pop_func},
+		{"swap", swap_func},
 		{NULL, NULL}
 	};
 	int index = 0;
@@ -24,6 +27,6 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 		}
 		index++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s", line_number, token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
