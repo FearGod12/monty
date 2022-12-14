@@ -11,6 +11,7 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 	instruction_t cmd[] = {
 		{"push", push_func},
 		{"pall", pall_func},
+		{"pint", pint_func},
 		{NULL, NULL}
 	};
 	int index = 0;
