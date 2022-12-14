@@ -24,6 +24,6 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 		}
 		index++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s", line_number, token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }

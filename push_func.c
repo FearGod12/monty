@@ -8,7 +8,7 @@
  */
 void push_func(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new, *temp = *stack;
+	stack_t *new;
 
 	(void) line_number;
 	new = malloc(sizeof(stack_t));
@@ -18,13 +18,15 @@ void push_func(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	new->n = global_var;
-	new->prev = NULL;
-	if (!stack)
+	
+	if (*stack == NULL)
 	{
 		new->next = NULL;
 		*stack = new;
-		return;
 	}
-	new->next = temp;
-	temp->prev = new;
+	else
+	{
+		new->next = *stack;
+		*stack = new;
+	}
 }

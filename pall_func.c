@@ -12,7 +12,7 @@ void pall_func(stack_t **stack, unsigned int line_number)
 	(void) line_number;
 	if (!stack || !(*stack))
 		return;
-	while (temp)
+	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
