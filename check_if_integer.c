@@ -9,9 +9,9 @@ int check_if_integer(char *arg)
 {
 	int i = 0;
 
-	while (*(arg + 1) != '\0')
+	while (*(arg + i) != '\0')
 	{
-		if (*(arg + 1) >= '0' && *(arg + 1) <= '9')
+		if (*(arg + i) >= '0' && *(arg + i) <= '9')
 		{
 			i++;
 		}
