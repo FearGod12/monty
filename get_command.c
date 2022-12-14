@@ -22,7 +22,7 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 		{"mod", mod_func},
 		{"pchar", pchar_func},
 		{"pstr", pstr_func},
-		{"rotr", rotr_func},
+		{"rotl", rotl_func},
 		{NULL, NULL}
 	};
 	int index = 0;
