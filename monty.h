@@ -59,6 +59,7 @@ void div_func(stack_t **stack, unsigned int line_number);
 void mul_func(stack_t **stack, unsigned int line_number);
 void mod_func(stack_t **stack, unsigned int line_number);
 void pchar_func(stack_t **stack, unsigned int line_number);
+void pstr_func(stack_t **stack, unsigned int line_number);
 
 void get_command(char *token, stack_t **head, unsigned int line_number);
 char *get_strtok(char *line, unsigned int line_number);
