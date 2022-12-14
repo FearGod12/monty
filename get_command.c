@@ -18,6 +18,7 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 		{"nop", nop_func},
 		{"sub", sub_func},
 		{"div", div_func},
+		{"mul", mul_func},
 		{NULL, NULL}
 	};
 	int index = 0;
