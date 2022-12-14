@@ -18,7 +18,7 @@ void push_func(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	new->n = global_var;
-	
+
 	if (*stack == NULL)
 	{
 		new->next = NULL;
