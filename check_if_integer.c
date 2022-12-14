@@ -12,13 +12,9 @@ int check_if_integer(char *arg)
 	while (*(arg + i) != '\0')
 	{
 		if (*(arg + i) >= '0' && *(arg + i) <= '9')
-		{
 			i++;
-		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (1);
 }
