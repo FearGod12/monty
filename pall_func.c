@@ -11,7 +11,11 @@ void pall_func(stack_t **stack, unsigned int line_number)
 
 	(void) line_number;
 	if (!stack || !(*stack))
-		return;
+	{
+		fprintf(stderr, "L%d: can't pall, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
 	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
