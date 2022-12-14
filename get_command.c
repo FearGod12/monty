@@ -2,7 +2,7 @@
 
 /**
  * get_command - matches a token to a command
- * @token - token to be matched
+ * @token: token to be matched
  * @head: pointer to the top of the stack
  * @line_number: lune number
  */

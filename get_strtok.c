@@ -14,7 +14,7 @@ char *get_strtok(char *line, unsigned int line_number)
 
 	token = strtok(line, delim);
 	if (!token)
-		return NULL;
+		return (NULL);
 	arg = strtok(NULL, delim);
 	if (arg)
 	{
