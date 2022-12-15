@@ -4,7 +4,7 @@
  * free_dlistint - frees a doubly linked list
  * @head: head pointer to the list
  */
-void free_dlistint(stack_t *stack)
+void free_stack(stack_t *stack)
 {
 	stack_t *temp;
 
