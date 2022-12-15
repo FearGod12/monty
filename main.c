@@ -42,6 +42,7 @@ int main(int argc, char **argv)
 		bytes_read = getline(&line, &len, fd);
 	}
 	free(line);
+	free_stack(head);
 	fclose(fd);
 	return (0);
 }
