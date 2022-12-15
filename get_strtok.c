@@ -30,13 +30,13 @@ char *get_strtok(char *line, unsigned int line_number)
 		}
 		else
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if (arg == NULL && (strcmp(token, "push") == 0))
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
 	}
 	return (token);
