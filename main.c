@@ -31,15 +31,12 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	bytes_read = getline(&line, &len, fd);
-
-	while (bytes_read != -1)
+	while ((bytes_read = getline(&line, &len, fd)) != -1)
 	{
 		line_number++;
 		token = get_strtok(line, line_number);
 		if (token != NULL)
 			get_command(token, &head, line_number);
-		bytes_read = getline(&line, &len, fd);
 	}
 	free(line);
 	free_stack(head);

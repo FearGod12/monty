@@ -23,6 +23,9 @@ void get_command(char *token, stack_t **head, unsigned int line_number)
 		{"pchar", pchar_func},
 		{"pstr", pstr_func},
 		{"rotl", rotl_func},
+		{"rotr", rotr_func},
+		{"stack", change_mode_func},
+		{"queue", change_mode_func},
 		{NULL, NULL}
 	};
 	int index = 0;
