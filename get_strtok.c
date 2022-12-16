@@ -12,31 +12,23 @@ char *get_strtok(char *line, unsigned int line_number)
 	char *token = NULL;
 	char *arg = NULL;
 
-	line = strtok(line, "\n");
+	line = strtok(line, "\n"); /*removes newline*/
 	token = strtok(line, delim);
 
-	if (!token) /*empty lines*/
+	if (!token) /*ignore empty lines*/
 		return (NULL);
 
-	if (token[0] == '#') /*comments*/
+	if (token[0] == '#') /*ignore comments*/
 		return (NULL);
 
 	arg = strtok(NULL, delim);
-	if (arg)
+	if (arg && check_if_integer(arg)) /*if arguement !empty/!int*/
 	{
-		if (check_if_integer(arg))
-		{
-			global_var = atoi(arg);
-		}
-		else
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
+		global_var = atoi(arg);
 	}
 	else if (arg == NULL && (strcmp(token, "push") == 0))
 	{
-		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	return (token);
