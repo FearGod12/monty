@@ -1,19 +1,25 @@
 #include "monty.h"
 
 /**
- * rotl_func - rotates elements of a stack
- * @stack: pointer to the top of the stack
- * @line_number: line number of code from file read
+ * rotr_func - rotates the stack to the bottom.
+ * The last element of the stack becomes the top element of the stack
+ * @stack: pointer to the head
+ * @line_number: line number where the opcode was read from file
  */
-void rotl_func(stack_t **stack, unsigned int line_number)
+void rotr_func(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp, *top = *stack;
+	stack_t *temp = *stack;
+	stack_t *top = *stack;
 
 	(void) line_number;
-	*stack = top->next;
-	temp = *stack;
-	while (temp->next != NULL)
+	if (!stack || !(*stack))
+		return;
+	*stack = temp->next;
+	while (temp->next->next != NULL)
+	{
+		*stack = (*stack)->next;
 		temp = temp->next;
-	temp->next = top;
-	top->next = NULL;
+	}
+	(*stack)->next = top;
+	temp->next = NULL;
 }

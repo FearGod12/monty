@@ -62,10 +62,8 @@ void pchar_func(stack_t **stack, unsigned int line_number);
 void pstr_func(stack_t **stack, unsigned int line_number);
 void rotl_func(stack_t **stack, unsigned int line_number);
 void rotr_func(stack_t **stack, unsigned int line_number);
-<<<<<<< HEAD
-=======
 void free_stack(stack_t *stack);
->>>>>>> 89eaec8cf4a9b90d371e7a26e554d7aa770f273b
+void change_mode_func(stack_t **stack, unsigned int line_number);
 
 void get_command(char *token, stack_t **head, unsigned int line_number);
 char *get_strtok(char *line, unsigned int line_number);
