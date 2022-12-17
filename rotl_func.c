@@ -9,32 +9,13 @@
  */
 void rotl_func(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top;
-	stack_t	*temp = *stack;
-	stack_t *second = *stack;
+	stack_t *temp, *top = *stack;
 
 	(void) line_number;
-	if (!stack || !(*stack))
-	{
-		return;
-	}
-	top = malloc(sizeof(stack_t));
-	if (!top)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	top->n = second->n;
-	top->next = NULL;
-	while (temp->next != NULL)
-	{
-		temp = temp->next;
-	}
-	top->prev = temp;
-	temp->next = top;
-	second = second->next;
-	second->prev = NULL;
+	*stack = top->next;
 	temp = *stack;
-	*stack = second;
-	free(temp);
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = top;
+	top->next = NULL;
 }
