@@ -8,7 +8,7 @@
 int check_if_integer(char *arg)
 {
 	int i = 0;
-	
+
 	if (arg[i] == '-')
 		i++;
 	while (*(arg + i) != '\0')
