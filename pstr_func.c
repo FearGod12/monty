@@ -15,22 +15,20 @@ void pstr_func(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !(*stack))
 	{
-		fprintf(stderr, "L%d: can't pstr, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
+		printf("\n");
+		return;
 	}
 
 	while (temp != NULL)
 	{
-		if (temp->n != 0)
+		if (temp->n == 0 || !(temp->n >= 32 && temp->n <= 127))
 		{
-			if (temp->n >= 32 && temp->n <= 127)
-				putchar(temp->n);
+			putchar('\n');
+			return;
 		}
-		else
-		{
-			break;
-		}
+		putchar(temp->n);
 		temp = temp->next;
 	}
 	putchar('\n');
+	return;
 }
