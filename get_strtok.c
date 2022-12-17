@@ -22,7 +22,7 @@ char *get_strtok(char *line, unsigned int line_number)
 		return (NULL);
 
 	arg = strtok(NULL, delim);
-	if (arg && check_if_integer(arg)) /*if arguement !empty/!int*/
+	if (arg && (check_if_integer(arg) == 1))/*if arguement !empty/!int*/
 	{
 		global_var = atoi(arg);
 	}
